@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:44:34 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/09 14:31:27 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/08/10 16:47:05 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,12 @@ void	init_list(int argc, t_list *list)
 
 void	algorithm(t_list *list, int argc)
 {
-	if (argc == 1 && argc == 2)
+	if (argc == 1 || argc == 2)
 		return ;
 	if (argc == 3)
 		case_2(list);
+	if (argc == 4)
+		case_3(list);
 }
 
 int	main(int argc, char **argv)

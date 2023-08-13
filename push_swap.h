@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:39:36 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/09 14:34:01 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/08/10 15:29:02 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ void	ft_free_all(t_list *list);
 void	check_input(char **argv, int argc, t_list *list);
 void	swappp(int *a, int *b);
 void	case_2(t_list *list);
+void	case_3(t_list *list);
 
 #endif

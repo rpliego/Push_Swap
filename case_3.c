@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   case_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/17 04:34:12 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/09 15:38:38 by rpliego          ###   ########.fr       */
+/*   Created: 2023/08/09 15:47:29 by rpliego           #+#    #+#             */
+/*   Updated: 2023/08/11 17:37:57 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_list *list)
+void	case_3(t_list *list)
 {
-	int	i;
+	int	sa0;
+	int	sa1;
+	int	sa2;
 
-	i = list ->lena;
-	while (i-- > 0)
-		swappp(&list ->stacka[i], &list ->stacka[i - 1]);
-	list ->lena--;
-	list ->lenb++;
-	list -> stacka[0] = list -> stackb[0];
-	i = 0;
-	while (i++ < (list -> lenb - 1))
-		list -> stackb[i] = list -> stackb[i + 1];
-	write(1, "pa\n", 3);
+	sa0 = list -> stacka[0];
+	sa1 = list -> stacka[1];
+	sa2 = list -> stacka[2];
+	if (sa0 > sa1 && sa1 < sa2)
+		case_2(list);
+	else if (list -> stacka[0] < list -> stacka[1] 
+		&& list -> stacka[1] > list ->stacka[2])
+	{
+		
+	}
 }
+
+2 1 3 +
+3 2 1
+3 1 2
+2 3 1
+1 3 2
+
+1 2 3 + 
