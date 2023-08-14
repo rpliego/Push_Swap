@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:39:36 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/10 15:29:02 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/08/14 04:04:33 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ typedef struct s_list
 }	t_list;
 
 void	pa(t_list *list);
-void	swappp(int *a, int *b);
 int		custom_atoi(char *str, t_list *list);
 void	ft_error(void);
 void	ft_free_all(t_list *list);
 void	check_input(char **argv, int argc, t_list *list);
-void	swappp(int *a, int *b);
 void	case_2(t_list *list);
 void	case_3(t_list *list);
+void	swappp(int *a, int *b);
+void	ra(t_list *list);
+void	sa(t_list *list);
+void	rra(t_list *list);
 
 #endif

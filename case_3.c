@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:47:29 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/11 17:37:57 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/08/14 04:46:33 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,27 @@ void	case_3(t_list *list)
 	sa1 = list -> stacka[1];
 	sa2 = list -> stacka[2];
 	if (sa0 > sa1 && sa1 < sa2)
-		case_2(list);
-	else if (list -> stacka[0] < list -> stacka[1] 
-		&& list -> stacka[1] > list ->stacka[2])
+		sa(list);
+	else if (sa0 > sa1 && sa1 > sa2)
 	{
-		
+		ra(list);
+		sa(list);
 	}
+	else if (sa0 > sa1 && sa1 < sa2)
+		ra(list);
+	else if (sa0 < sa1 && sa1 > sa2 && sa0 < sa2)
+	{
+		rra(list);
+		sa(list);
+	}
+	else
+		rra(list);
 }
 
-2 1 3 +
-3 2 1
-3 1 2
-2 3 1
-1 3 2
+// 2 1 3 +
+// 3 2 1 +
+// 3 1 2 +
+// 2 3 1 +
+// 1 3 2 
 
-1 2 3 + 
+// 1 2 3 + 
