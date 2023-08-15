@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 03:19:22 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/14 18:55:34 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/08/15 23:10:42 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ra(t_list *list)
 	int	i;
 
 	i = 0;
-	while (i < list -> lena - 1)
+	while (i + 1 < list -> lena)
 	{
 		swappp(&list -> stacka[i], &list -> stacka[i + 1]);
 		i++;

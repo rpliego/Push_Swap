@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:44:34 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/14 18:59:25 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/08/15 23:27:05 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	algorithm(t_list *list, int argc)
 		case_3(list);
 	if (argc == 5)
 		case_4(list);
+	if (argc == 6)
+		case_5(list);
 }
 
 int	main(int argc, char **argv)
