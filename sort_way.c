@@ -1,52 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_moves.c                                     :+:      :+:    :+:   */
+/*   sort_way.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 03:19:22 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/07 02:21:10 by rpliego          ###   ########.fr       */
+/*   Created: 2023/09/06 01:10:29 by rpliego           #+#    #+#             */
+/*   Updated: 2023/09/07 03:13:13 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_list *list)
+void	sort_way(t_list *list, int top, int bottom, int chunkl)
 {
 	int	i;
+	int	j;
+	int	mid;
 
+	mid = list -> tlen / 2;
+	j = 0;
 	i = 0;
-	while (i + 1 < list -> lena)
+	if (top > mid)
 	{
-		swappp(&list -> stacka[i], &list -> stacka[i + 1]);
-		i++;
+		while (list -> stacka[0] > chunkl)
+			rra(list);
 	}
-	write(1, "ra\n", 3);
-}
-
-void	rra(t_list *list)
-{
-	int	i;
-
-	i = list -> lena - 1;
-	while (i > 0)
+	else
 	{
-		swappp(&list -> stacka[i], &list -> stacka[i - 1]);
-		i--;
+		while (list -> stacka[0] > chunkl)
+			ra(list);
 	}
-	write(1, "rra\n", 4);
-}
-
-void	rb(t_list *list)
-{
-	int	i;
-
-	i = 0;
-	while (i + 1 < list -> lenb)
-	{
-		swappp(&list -> stackb[i], &list -> stackb[i + 1]);
-		i++;
-	}
-	write(1, "rb\n", 3);
+	pb(list);
 }

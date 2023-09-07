@@ -1,52 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_moves.c                                     :+:      :+:    :+:   */
+/*   index_stacks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 03:19:22 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/07 02:21:10 by rpliego          ###   ########.fr       */
+/*   Created: 2023/09/03 19:23:30 by rpliego           #+#    #+#             */
+/*   Updated: 2023/09/04 02:27:25 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_list *list)
+void	index_stacks(t_list *list)
 {
 	int	i;
+	int	j;
+	int	index;
+	int	*aux;
 
+	aux = malloc(list -> tlen * sizeof(int));
+	if (!aux)
+		ft_free_all(list);
+	i = -1;
+	while (i++ < list -> tlen)
+		aux[i] = list -> stacka[i];
 	i = 0;
-	while (i + 1 < list -> lena)
+	while (i < list -> tlen)
 	{
-		swappp(&list -> stacka[i], &list -> stacka[i + 1]);
+		j = 0;
+		index = 1;
+		while (j < list -> tlen)
+		{
+			if (j != i && aux[j] < list -> stacka[i])
+				index++;
+			j++;
+		}
+		list -> stacka[i] = index;
 		i++;
 	}
-	write(1, "ra\n", 3);
-}
-
-void	rra(t_list *list)
-{
-	int	i;
-
-	i = list -> lena - 1;
-	while (i > 0)
-	{
-		swappp(&list -> stacka[i], &list -> stacka[i - 1]);
-		i--;
-	}
-	write(1, "rra\n", 4);
-}
-
-void	rb(t_list *list)
-{
-	int	i;
-
-	i = 0;
-	while (i + 1 < list -> lenb)
-	{
-		swappp(&list -> stackb[i], &list -> stackb[i + 1]);
-		i++;
-	}
-	write(1, "rb\n", 3);
 }

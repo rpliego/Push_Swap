@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:44:34 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/03 00:15:10 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/07 03:13:21 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	init_list(int argc, t_list *list)
 	list -> lenb = 0;
 }
 
-void	algorithm(t_list *list, int argc)
+void	pushuap(t_list *list, int argc)
 {
 	if (argc == 1 || argc == 2)
 		return ;
@@ -60,7 +60,17 @@ void	algorithm(t_list *list, int argc)
 	if (argc == 6)
 		case_5(list);
 	if (argc > 6)
-		;
+		index_stacks(list);
+	if (argc > 6 && argc <= 101)
+	{
+		make_chunk(list, 5);
+		push_a_sorted(list);
+	}
+	if (argc > 101)
+	{
+		make_chunk(list, 11);
+		push_a_sorted(list);
+	}
 }
 
 int	main(int argc, char **argv)
@@ -84,7 +94,7 @@ int	main(int argc, char **argv)
 		ft_free_all(list);
 		return (0);
 	}
-	algorithm(list, argc);
+	pushuap(list, argc);
 	ft_free_all(list);
 	return (0);
 }

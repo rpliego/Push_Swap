@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 13:26:22 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/14 22:39:09 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/06 21:25:38 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	pb(t_list *list)
 	}
 	list -> stackb[0] = list -> stacka[0];
 	i = 0;
-	while (i <= (list -> lena - 1))
+	while (i <= list -> lena - 1)
 	{
 		list -> stacka[i] = list -> stacka[i + 1];
 		i++;
