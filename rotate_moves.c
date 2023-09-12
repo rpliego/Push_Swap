@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 03:19:22 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/07 02:21:10 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/11 19:51:56 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,17 @@ void	rb(t_list *list)
 		i++;
 	}
 	write(1, "rb\n", 3);
+}
+
+void	rrb(t_list *list)
+{
+	int	i;
+
+	i = list -> lenb - 1;
+	while (i > 0)
+	{
+		swappp(&list -> stackb[i], &list -> stackb[i - 1]);
+		i--;
+	}
+	write(1, "rrb\n", 4);
 }

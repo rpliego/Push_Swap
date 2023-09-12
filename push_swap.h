@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:39:36 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/07 03:22:49 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/11 20:16:09 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ void	swappp(int *a, int *b);
 void	ra(t_list *list);
 void	sa(t_list *list);
 void	rra(t_list *list);
+void	rrb(t_list *list);
 void	index_stacks(t_list *list);
-void	make_chunk(t_list *list, int n);
-void	sort_way(t_list *list, int top, int bottom, int mid);
+void	make_chunk_5(t_list *list);
+void	make_chunk_11(t_list *list);
+void	sort_way(t_list *list, int mid);
 void	push_a_sorted(t_list *list);
 
 #endif

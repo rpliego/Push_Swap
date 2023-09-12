@@ -6,75 +6,60 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 02:33:30 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/07 03:12:41 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/11 20:51:53 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_bottom(t_list *list, int chunk_break)
+void	make_chunk_5(t_list *list)
 {
 	int	i;
-
-	i = list -> lena - 1;
-	while (i >= 0)
-	{
-		if (list -> stacka[i] <= chunk_break)
-			return (list->lena - i);
-		i--;
-	}
-	return (-1);
-}
-
-int	find_top(t_list *list, int chunk_break)
-{
-	int	i;
-
-	i = 0;
-	while (i < list -> lena)
-	{
-		if (list -> stacka[i] <= chunk_break)
-			return (i);
-		i++;
-	}
-	return (-1);
-}
-
-void	make_chunk(t_list *list, int n)
-{
-	int	i;
-	int	top;
-	int	bottom;
 	int	chunkl;
 	int	x;
+	int	aux;
 
 	i = 0;
 	x = 1;
-	chunkl = list -> tlen / n;
-	while (n > 0)
+	chunkl = list -> tlen / 5 + (list -> tlen % 5);
+	aux = chunkl;
+	while (list -> lena)
 	{
 		while (list -> lena > 0 && i < chunkl)
 		{
-			top = find_top(list, chunkl);
-			bottom = find_bottom(list, chunkl);
-			sort_way(list, top, bottom, chunkl);
-			if (list -> stackb[0] > (chunkl * x) / 2)
+			sort_way(list, chunkl);
+			if (list -> stackb[0] > chunkl - (aux / 2))
 				rb(list);
 			i++;
 		}
-		chunkl += list-> tlen / n;
-		n--;
+		chunkl += aux;
 		x++;
 	}
-	int w;
-	w = 0;
-	while (w < list -> tlen)
+}
+
+void	make_chunk_11(t_list *list)
+{
+	int	i;
+	int	chunkl;
+	int	x;
+	int	aux;
+
+	i = 0;
+	x = 1;
+	chunkl = list -> tlen / 11 + (list -> tlen % 11);
+	aux = chunkl;
+	while (list -> lena)
 	{
-		printf("%i   %i\n", list -> stacka[w], list -> stackb[w]);
-		w++;
+		while (list -> lena > 0 && i < chunkl)
+		{
+			sort_way(list, chunkl);
+			if (list -> stackb[0] > chunkl - (aux / 2))
+				rb(list);
+			i++;
+		}
+		chunkl += aux;
+		x++;
 	}
-	printf("------\n");
-	printf("a   b");
 }
 
 /*
@@ -95,7 +80,3 @@ void	make_chunk(t_list *list, int n)
 	 
 	 Ir buscando el mas grande en b y pasarlo, si me encuentro en siguiente de camino lo paso y luego hago sa
 */
-
-
-
-

@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:44:34 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/07 03:13:21 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/11 20:14:56 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void	pushuap(t_list *list, int argc)
 		index_stacks(list);
 	if (argc > 6 && argc <= 101)
 	{
-		make_chunk(list, 5);
+		make_chunk_5(list);
 		push_a_sorted(list);
 	}
 	if (argc > 101)
 	{
-		make_chunk(list, 11);
+		make_chunk_11(list);
 		push_a_sorted(list);
 	}
 }
