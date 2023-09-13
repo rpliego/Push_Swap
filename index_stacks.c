@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 19:23:30 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/04 02:27:25 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/12 21:15:51 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	index_stacks(t_list *list)
 	i = -1;
 	while (i++ < list -> tlen)
 		aux[i] = list -> stacka[i];
-	i = 0;
-	while (i < list -> tlen)
+	i = -1;
+	while (i++ < list -> tlen)
 	{
 		j = 0;
 		index = 1;
@@ -37,6 +37,6 @@ void	index_stacks(t_list *list)
 			j++;
 		}
 		list -> stacka[i] = index;
-		i++;
 	}
+	free(aux);
 }

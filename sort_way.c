@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 01:10:29 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/11 20:10:49 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/12 22:08:17 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,9 @@ void	sort_way(t_list *list, int chunkl)
 {
 	int	top;
 	int	bottom;
-	int	mid;
 
 	top = find_top(list, chunkl);
 	bottom = find_bottom(list, chunkl);
-	mid = list -> lena / 2;
 	if (bottom > top)
 	{
 		while (list -> stacka[0] > chunkl)

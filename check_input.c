@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 03:51:56 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/09 14:33:46 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/13 04:41:29 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	is_duplicated(char **argv, int argc, t_list *list)
 		j = 1;
 		while (j < argc)
 		{
-			if (custom_atoi(argv[j], list) == custom_atoi(argv[i], list) 
+			if (custom_atoi(argv[j], list) == custom_atoi(argv[i], list)
 				&& j != i)
 			{
 				list -> error = 1;
@@ -45,10 +45,12 @@ void	is_number(char **argv, t_list *list)
 	while (argv[i])
 	{
 		j = 0;
+		if (argv[i][j] == '+' || argv[i][j] == '-')
+			j++;
+		if (!argv[i][j])
+			list->error = 1;
 		while (argv[i][j])
 		{
-			if (argv[i][j] == '+' || argv[i][j] == '-')
-				j++;
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				list->error = 1;
@@ -68,9 +70,7 @@ int	is_sorted(t_list *list, int argc)
 	while (i < argc - 2)
 	{
 		if (list -> stacka[i] > list -> stacka[i + 1])
-		{
 			return (1);
-		}
 		i++;
 	}
 	return (0);
@@ -85,9 +85,5 @@ void	check_input(char **argv, int argc, t_list *list)
 	if (list -> error == 1)
 		ft_error();
 	if (is_sorted(list, argc) == 0)
-	{
-		list -> error = 1;
-		write(1, "is already sorted =)\n", 21);
 		exit(0);
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 05:18:12 by rpliego           #+#    #+#             */
-/*   Updated: 2023/08/07 07:41:47 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/13 00:15:25 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	custom_atoi(char *str, t_list *list)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		out = (out * 10) + str[i] - '0';
-		if (out > (INT32_MAX) || out < (INT32_MIN))
+		if ((out > 2147483647 && neg == 1) || (out > 2147483648 && neg == -1))
 			list -> error = 1;
 		i++;
 	}
