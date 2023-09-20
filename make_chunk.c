@@ -6,7 +6,7 @@
 /*   By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 02:33:30 by rpliego           #+#    #+#             */
-/*   Updated: 2023/09/13 04:40:36 by rpliego          ###   ########.fr       */
+/*   Updated: 2023/09/20 01:26:31 by rpliego          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ void	make_chunk_5(t_list *list)
 {
 	int	i;
 	int	chunkl;
-	int	x;
 	int	aux;
 
 	i = 0;
-	x = 1;
 	chunkl = list -> tlen / 4 + (list -> tlen % 4);
 	aux = chunkl;
 	while (list -> lena)
@@ -33,7 +31,6 @@ void	make_chunk_5(t_list *list)
 			i++;
 		}
 		chunkl += aux;
-		x++;
 	}
 }
 
@@ -41,11 +38,9 @@ void	make_chunk_11(t_list *list)
 {
 	int	i;
 	int	chunkl;
-	int	x;
 	int	aux;
 
 	i = 0;
-	x = 1;
 	chunkl = list -> tlen / 8 + (list -> tlen % 8);
 	aux = chunkl;
 	while (list -> lena)
@@ -58,6 +53,5 @@ void	make_chunk_11(t_list *list)
 			i++;
 		}
 		chunkl += aux;
-		x++;
 	}
 }

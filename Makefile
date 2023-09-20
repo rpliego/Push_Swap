@@ -6,12 +6,12 @@
 #    By: rpliego <rpliego@student.42barcelo>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 03:49:18 by rpliego           #+#    #+#              #
-#    Updated: 2023/09/13 04:04:33 by rpliego          ###   ########.fr        #
+#    Updated: 2023/09/20 23:10:31 by rpliego          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 SRC = case_2.c \
@@ -32,7 +32,7 @@ SRC = case_2.c \
 		sort_way.c
 
 OBJ = $(SRC:.c=.o)
-INCLUDE = push_swap.h
+INCLUDE = push_swap.h Makefile
 
 all: $(NAME)
 
@@ -40,7 +40,7 @@ $(NAME): $(OBJ) $(INCLUDE)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -c -o $@ $< 
+	$(CC) $(CFLAGS) -c -o $@ $< 
 
 clean:
 	$(RM) $(OBJ)
